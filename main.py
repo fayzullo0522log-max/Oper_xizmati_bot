@@ -9,7 +9,7 @@ from aiogram.enums import ParseMode
 
 from config import BOT_TOKEN
 from database import init_db
-from handlers import admin, members, moderation
+from handlers import admin, members, moderation, start
 
 logging.basicConfig(
     level=logging.INFO,
@@ -49,6 +49,7 @@ async def main():
     dp = Dispatcher()
 
     # Buyruqlar (admin) alohida router, keyin a'zolar, keyin umumiy moderatsiya
+    dp.include_router(start.router)
     dp.include_router(admin.router)
     dp.include_router(members.router)
     dp.include_router(moderation.router)
