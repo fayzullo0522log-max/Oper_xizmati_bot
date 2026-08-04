@@ -58,13 +58,8 @@ async def on_member_join(event: ChatMemberUpdated):
             msg = await bot.send_message(
                 chat_id,
                 f"👋 Xush kelibsiz, {user.first_name}!\n\n"
-                f"Guruhda yozish uchun {CAPTCHA_TIMEOUT_SECONDS} soniya ichida "
-                f"pastdagi tugmani bosing.",
+                f"Guruhda yozish uchun pastdagi tugmani bosing."
                 reply_markup=keyboard,
-            )
-
-            asyncio.create_task(
-                _captcha_timeout(bot, chat_id, user.id, msg.message_id)
             )
         else:
             welcome = settings.get("welcome_message") or f"👋 Xush kelibsiz, {user.first_name}!"
