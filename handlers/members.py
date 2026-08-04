@@ -15,7 +15,7 @@ import database as db
 router = Router()
 logger = logging.getLogger(__name__)
 
-
+'CAPTCHA_TIMEOUT_SECONDS'
 
 @router.chat_member()
 async def on_member_join(event: ChatMemberUpdated):
