@@ -15,7 +15,6 @@ import database as db
 router = Router()
 logger = logging.getLogger(__name__)
 
-CAPTCHA_TIMEOUT_SECONDS = 90
 
 
 @router.chat_member()
